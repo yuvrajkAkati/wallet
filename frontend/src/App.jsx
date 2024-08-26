@@ -13,27 +13,27 @@ import { Keypair } from "@solana/web3.js";
 import nacl from "tweetnacl";
 
 
-
-
-
 function App() {
   const [mnemonics , setMnemonics] = useState("")
-  const [publicKeys , setPublicKeys] =  useState([])
-  const [privateKeys, setPrivateKeys] = useState([])
   const [count , setCount] = useState(1)
-  const [ r ,setr] = useState([])
   const [wally , setWally] = useState([{
     id : "",
     public_key : "",
     private_key : ""
   }])
-  
+
   useEffect(()=>{
     const mnemonics = generateMnemonic()
     setMnemonics(mnemonics)
-  },[])
+  },[]) 
+
+  
+
   return (
-    <Solana mnemonics={mnemonics} wally={wally} onClick={()=>{
+    
+    <div className='bg-white-500 dark:bg-black h-full '>
+     <div className='px-28 pt-8 pb-8'>
+     <Solana mnemonics={mnemonics} wally={wally} onClick={()=>{
       
       const seed =mnemonicToSeedSync(mnemonics)
       const path = `m/44'/501'/${count}'/0'`
@@ -56,8 +56,20 @@ function App() {
         public_key : publicKey,
         private_key : privateKey
        }])
-   
+       
+    }}
+    
+    onClickDelete={()=>{
+      setWally([{
+        id : "",
+        public_key : "",
+        private_key : ""
+      }])
+      setCount(1)
     }}></Solana>
+     </div>
+     </div>
+    
   )
 }
 
