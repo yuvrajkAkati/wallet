@@ -3,14 +3,12 @@ import './App.css'
 import { Button } from './components/ui/button'
 import SecretPhase from './components/ui/SecretPhase'
 import { generateMnemonic, mnemonicToSeedSync } from "bip39";
-import { ThemeProvider } from './components/theme-provider';
-import { ModeToggle } from './components/mode-toggle';
-import { Topbar } from './components/ui/Topbar';
 import { Solana } from './pages/Solana';
 import bs58 from 'bs58'
 import { derivePath } from "ed25519-hd-key";
 import { Keypair } from "@solana/web3.js";
 import nacl from "tweetnacl";
+import { parse } from 'postcss';
 
 
 function App() {
@@ -27,7 +25,9 @@ function App() {
     setMnemonics(mnemonics)
   },[]) 
 
-  
+  const deleteWallet = wallet =>{
+    setWally(wally.filter(walletItem => walletItem.id != wallet.id))
+  }
 
   return (
     
@@ -66,7 +66,16 @@ function App() {
         private_key : ""
       }])
       setCount(1)
-    }}></Solana>
+    }}
+    
+    setCount={setCount}
+
+    setWally={setWally}
+
+    onClickDeleteIndividual={deleteWallet}
+    
+    ></Solana>
+    <button onClick={deleteWallet}></button>
      </div>
      </div>
     

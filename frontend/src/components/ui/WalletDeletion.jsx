@@ -20,7 +20,7 @@ export function WalletDeletion({onClickDelete}){
                     <AlertDialogHeader>
                     <AlertDialogTitle>Are you absolutely sure?</AlertDialogTitle>
                     <AlertDialogDescription>
-                        This action cannot be undone. This will permanently delete your account
+                        This action cannot be undone. This will permanently delete your wallets
                         and remove your data from our servers.
                     </AlertDialogDescription>
                     </AlertDialogHeader>

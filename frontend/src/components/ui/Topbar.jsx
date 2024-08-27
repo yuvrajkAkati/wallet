@@ -20,7 +20,7 @@ export function Topbar(){
 
     return (
         <div>
-            <div className="flex justify-between pb-9 "><div className="text-5xl antialiased font-bold ">wally <span>1.0</span></div><div className=" flex  pt-4">{/*<Sun></Sun><Switch onClick={handleTheme}  ></Switch><Moon/>*/}</div></div>
+            <div className="flex justify-between pb-9 pt-5"><div className="text-5xl antialiased font-bold "><span className="border shadow-md rounded-lg p-2">wally 1.0</span> </div><div className=" flex  pt-4">{/*<Sun></Sun><Switch onClick={handleTheme}  ></Switch><Moon/>*/}</div></div>
         </div>
     )
 }

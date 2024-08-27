@@ -5,7 +5,7 @@ export function WalletGenerator({wallet , onClick , onClickDelete}){
     return (
         <div>
             <div className="flex justify-between pt-8">
-                <div className="text-4xl font-bold font-medium">
+                <div className="text-4xl font-bold font-medium shadow">
                     {wallet}
                 </div>
                 <div>
